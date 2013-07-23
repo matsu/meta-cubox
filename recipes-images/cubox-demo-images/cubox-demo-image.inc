@@ -4,19 +4,13 @@ LICENSE = "MIT"
 
 inherit core-image
 
-COMMERCIAL_FLAGGED_PACKAGES = " \
-	gst-plugins-ugly-meta \
-        gst-ffmpeg \
-	gst-fluendo-mpegdemux \
-	gst-fluendo-mp3 \
-"
-
 IMAGE_INSTALL += " \
         gstreamer \
-        gst-plugins-base-meta \
-        gst-plugins-good-meta \
-        gst-plugins-bad-meta \
-	${@base_contains('LICENSE_FLAGS_WHITELIST', 'commercial', '${COMMERCIAL_FLAGGED_PACKAGES}', '', d)} \
+    gst-meta-base \
+    gst-meta-x11-base \
+    gst-meta-audio \
+    gst-meta-debug \
+    gst-meta-video \
 	marvell-libgfx \
 	marvell-libbmm \
 	marvell-libvmeta \
